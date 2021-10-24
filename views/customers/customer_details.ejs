@@ -1,0 +1,39 @@
+<%- include( '../header/navbar'); %>
+<html lang="en">
+    <%- include( '../header/head'); %>
+    <style>
+        body{
+            background:url("./images/background.jpg");
+          }
+      .background{
+          -webkit-background-size: cover;
+          -mozt-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+      }
+  </style>
+    <body class="background">
+        <div class="container mt-5">
+            <table class="table table-white">
+                <thead>
+                  <tr>
+                    <th class="text-primary" scope="col">Name</th>
+                     <th class="text-primary" scope="col">Title</th>
+                    <th class="text-primary" scope="col">Description</th>         
+                  </tr>
+                        <tr>
+                            <td><%= customer.name %></td>
+                            <td><%= customer.title %></td>
+                            <td><%= customer.description %></td>
+                        </tr>
+        
+                </thead>
+            <table>
+                <a class="btn btn-secondary text-black p-1" href="/customers">All Customers</a>
+
+        </div>
+
+        <%- include("../header/script") -%>
+
+    </body>
+    </html>

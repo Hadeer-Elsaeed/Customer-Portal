@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../header/head") -%>
+<body>
+    <nav class="navbar navbar-info bg-light justify-content-between">
+        <a class="navbar-brand" href="#"><%= name %></a>
+        <a class="navbar-brand" href="#" style="margin-right: 50%;">Last Login: <%= last_login %></a>
+        <form action="/logout" method="get">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Log out</button>
+        </form>
+    </nav>
+  <%- include("../header/script") -%>
+</body>
+</html>

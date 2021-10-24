@@ -1,0 +1,63 @@
+
+<%- include( '../header/navbar'); %>
+<html lang="en">
+    <%- include( '../header/head'); %>
+    <style>
+        body{
+            background:url("./images/background.jpg");
+
+          }
+      .background{
+          -webkit-background-size: cover;
+          -mozt-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+      }
+  </style>
+    <body class="background">
+        <div class="container mt-5">
+
+            <table class="table table-white">
+                <thead>
+                  <tr>
+                    <th class="text-primary" scope="col">Name</th>
+                     <!-- <th class="text-primary" scope="col">title</th> -->
+                    <th class="text-danger" scope="col">delete</th>
+                    <!-- <th class="text-successful" scope="col">Add</th> --> 
+
+        
+                  </tr>
+                  <% customers.forEach(customer => { %>
+                        <tr>
+                            <td><a class="btn-primary text-light p-1" href="/customer/<%= customer.id%>"> <%= customer.name %></a></td>          
+                            <td><a class="btn-danger text-light p-1" href="#" onclick="deleteEvent(<%= customer.id %> , this)">delete</a></td>
+
+                        </tr>
+        
+                  <%}); %> 
+                </thead>
+                <table>
+                    <a class="btn btn-secondary text-black p-1" href="/add_customer">Add Customer</a>
+                </tbody>
+        </div>
+
+        <%- include("../header/script") -%>
+        <script>
+            function deleteEvent(ID,object)
+        {
+            $.ajax({
+                url:"http://localhost:3000/customer/"+ID,
+                method:"delete",
+                dataType:"text",
+                success(data){
+                    $(object).parents("tr").remove();
+                },
+                error(error){
+        
+                }
+                
+            })
+        }
+        </script>
+    </body>
+    </html>

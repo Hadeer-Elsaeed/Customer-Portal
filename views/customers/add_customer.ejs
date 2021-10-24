@@ -1,0 +1,54 @@
+<%- include("../header/navbar") -%>
+<html lang="en">
+    <%- include("../header/head") -%>
+    <style>
+        body{
+            background:url("./images/background.jpg");
+
+          }
+        .background{
+            -webkit-background-size: cover;
+            -mozt-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    </style>
+    <body class="background">
+        <div class="container mt-5">
+
+            <form method="POST" action="/add_customer">
+                 
+                <h3 class="text-secondary">Add Customer</h3>
+                
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="name" id="name" class="form-control " style="width: 400px;" placeholder="customer name" ><br>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="title" id="title" class="form-control " style="width: 400px;" placeholder="customer title" ><br>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="description" id="description" class="form-control" style="width: 400px;" placeholder="description" ><br>
+                        </div>
+                    </div>
+                </div>
+    
+               
+                <div class="row">
+                    
+                    <div class="col-xs-12"><button class=" btn bg-primary text-light ml-4" type="submit">Add</button></div>
+                <br>
+                <br>
+                </div>
+            </form>
+            <a class="btn btn-secondary text-black p-1" href="/customers">All Customers</a>
+        </div>
+    
+        <%- include("../header/script") -%>
+    </body>
+    </html>
